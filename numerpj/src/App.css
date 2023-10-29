@@ -1,0 +1,15 @@
+.results-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.results-list li {
+  margin: 10px 0; /* Adjust the margin as needed for vertical spacing */
+  padding: 10px; /* Adjust the padding for content spacing */
+  border: 1px solid #ccc; /* Add a border for visual separation */
+  background-color: #f9f9f9; /* Add a background color for contrast */
+
+  /* Use white-space and word-spacing to control the space between elements */
+  white-space: nowrap; /* Prevent line breaks */
+  word-spacing: 17px; /* Adjust the spacing between words */
+}
