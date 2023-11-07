@@ -6,11 +6,14 @@ import "./styles.css";
 
 function IterationChart({ data }) {
   const chartData = {
-    labels: data.map((_, index) => (index + 1).toString()),
+    labels: data.map((_, index) => (index).toString()),
     datasets: [
       {
         label: "xm",
-        data: data.map((row) => row.xm),
+        data: data.map((row, index) => ({
+          x: index + 1, // Start from 1
+          y: row.xm,
+        })),
         backgroundColor: "rgba(54, 102, 125, 0.2)",
         borderColor: "rgba(54, 102, 125, 1)",
         borderWidth: 1,
@@ -29,7 +32,7 @@ function IterationChart({ data }) {
         },
       },
       x: {
-        type: "category",
+        type: "linear",
         min: 0,
         title: {
           display: true,
@@ -80,7 +83,7 @@ function IterationTable({ data }) {
   );
 }
 
-function BisectionMethodCalculator() {
+function BisectionMethod() {
   const [func, setFunc] = useState("(x^4) - 13");
   const [xl, setXl] = useState();
   const [xr, setXr] = useState();
@@ -202,4 +205,4 @@ function BisectionMethodCalculator() {
   );
 }
 
-export default BisectionMethodCalculator;
+export default BisectionMethod;
